@@ -2,9 +2,9 @@
 
 A private, encrypted vault for passwords, notes, cards, IDs and documents, by heyhapps.
 
-- Website: https://ravvo-717.github.io/mystuff/
-- Privacy policy: https://ravvo-717.github.io/mystuff/privacy.html
-- Downloads: see [Releases](https://github.com/ravvo-717/mystuff/releases)
+- Website: https://heyhapps.github.io/mystuff-web/
+- Privacy policy: https://heyhapps.github.io/mystuff-web/privacy.html
+- Downloads: see [Releases](https://github.com/heyhapps/mystuff-app/releases)
 
 ## Website development
 

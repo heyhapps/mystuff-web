@@ -11,9 +11,9 @@ export const site = {
 
   links: {
     /** The GitHub Releases page; "latest" always points at the newest APK. */
-    download: 'https://github.com/ravvo-717/mystuff/releases/latest',
-    itch: 'https://ravvo-717.itch.io/mystuff',
-    github: 'https://github.com/ravvo-717/mystuff',
+    download: 'https://github.com/heyhapps/mystuff-app/releases/latest',
+    itch: 'https://heyhapps.itch.io/mystuff',
+    github: 'https://github.com/heyhapps/mystuff-app',
   },
 
   hero: {
