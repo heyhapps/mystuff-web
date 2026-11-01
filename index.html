@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Set the theme before the first paint, so a reload never flashes white (same rules as useTheme.ts). -->
+    <script>
+      (function () {
+        var t = location.hash.slice(1)
+        if (t !== 'dark' && t !== 'light') {
+          try { t = localStorage.getItem('theme') } catch (e) {}
+        }
+        if (t !== 'dark' && t !== 'light') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        document.documentElement.dataset.theme = t
+      })()
+    </script>
+    <style>
+      html { background: #fbfbfe; }
+      html[data-theme='dark'] { background: #05060b; }
+    </style>
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#fbfbfe" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#05060b" media="(prefers-color-scheme: dark)" />
+    <meta name="application-name" content="MyStuff" />
+    <title>MyStuff by heyhapps · Private vault for Android</title>
+    <meta
+      name="description"
+      content="A private, encrypted vault for passwords, notes, cards, IDs and documents. Backed up to your own Google Drive."
+    />
+    <!-- Link previews (WhatsApp, Telegram, X ...) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MyStuff by heyhapps" />
+    <meta property="og:title" content="MyStuff by heyhapps" />
+    <meta property="og:description" content="A private vault for passwords, notes, cards, IDs and documents. Free, with no ads and no tracking." />
+    <meta property="og:url" content="https://ravvo-717.github.io/mystuff/" />
+    <meta property="og:image" content="https://ravvo-717.github.io/mystuff/icon-512.png" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://ravvo-717.github.io/mystuff/" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
