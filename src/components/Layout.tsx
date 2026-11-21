@@ -11,8 +11,9 @@ const year = new Date().getFullYear()
 const PAGES = [
   { label: 'How it works', file: 'learn.html' },
   { label: 'Privacy policy', file: 'privacy.html' },
+  { label: 'Contact us', file: 'contact.html' },
 ]
-const isHome = (path: string) => !PAGES.some((page) => path.endsWith(page.file))
+const isHome = (path: string) => !path.endsWith('.html') || path.endsWith('/index.html')
 
 /** The sticky header, footer and theme handling every page shares. */
 export function Layout({ children }: { children: ReactNode }) {
@@ -139,6 +140,10 @@ export function Layout({ children }: { children: ReactNode }) {
           <nav>
             <a href={`${base}learn.html`}>How it works</a>
             <a href={`${base}privacy.html`}>Privacy policy</a>
+            <a href={`${base}terms.html`}>Terms</a>
+            <a href={`${base}refund.html`}>Refunds</a>
+            <a href={`${base}delivery.html`}>Delivery</a>
+            <a href={`${base}contact.html`}>Contact us</a>
             <a href={site.links.github}>GitHub</a>
             <a href={`mailto:${site.email}`}>
               <span className="desktop-only">{site.email}</span>

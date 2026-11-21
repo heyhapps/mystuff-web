@@ -1,6 +1,6 @@
 /**
- * Everything the site says and links to, in one place.
- * Edit this file to change the site; the components only render it.
+ * Everything the site says and links to, in one place; the policy pages are in policies.ts.
+ * Edit these files to change the site; the components only render them.
  */
 import type { IconName } from './components/Icon'
 
@@ -127,7 +127,7 @@ export const site = {
     eyebrow: 'Free for Android',
     title: 'Get it on\nyour phone',
     sub: 'No ads, no account. About a minute.',
-    meta: 'Version 1.0.1 beta · Android 7 or newer',
+    meta: 'Version 1.0.0 · Android 7 or newer',
     card: { title: 'Get started', sub: 'MyStuff by heyhapps' },
     /** `done` shows the step ticked. */
     steps: [
@@ -135,149 +135,5 @@ export const site = {
       { title: 'Allow the install', line: 'Turn on "Allow from this source" once' },
       { title: 'Set your PIN', line: 'Open MyStuff and choose one' },
     ] as { title: string; line: string; done?: boolean }[],
-  },
-
-  /** The privacy policy (privacy.html). Checked against what the app does;
-   *  change `updated` whenever the text changes. Emails, https:// links and
-   *  [label](https://...) in the text become links. */
-  privacy: {
-    title: 'Privacy policy',
-    intro: 'MyStuff has no servers and no accounts. Your data stays with you.',
-    updated: '1 November 2026',
-    sections: [
-      { id: 'who', title: 'Who we are', blocks: [{ p: 'MyStuff is made by heyhapps. Questions: hello.heyhapps@gmail.com' }] },
-      {
-        id: 'phone',
-        title: 'On your phone',
-        blocks: [
-          {
-            list: [
-              'Everything you save is encrypted with AES-256.',
-              'Your PIN and recovery answer never leave your phone.',
-              'Fingerprint unlock is done by Android. We never see it.',
-              'MyStuff only sees the files you choose.',
-              'A copied password stays in the clipboard until you copy something else.',
-            ],
-          },
-        ],
-      },
-      {
-        id: 'backup',
-        title: 'Google backup',
-        blocks: [
-          { p: 'Backup is optional. If you turn it on:' },
-          {
-            list: [
-              'MyStuff gets your name and email. It saves your email and Google account ID on your phone.',
-              "It can only use a private MyStuff folder in your Drive. It can't see your other files.",
-              'It checks how much space is free in your Drive. Nothing else.',
-              'Your encrypted vault is saved in that folder. Its key is locked with your PIN, and a second copy with your recovery answer.',
-              'Wrong PIN tries are counted there too, so reinstalling MyStuff does not reset them.',
-              'Backups go straight to your Drive, never to heyhapps.',
-            ],
-          },
-          {
-            p: "Your backup opens only with your MyStuff PIN. Signing in to your Google account is not enough. Still, turn on 2-Step Verification. [Google's privacy policy](https://policies.google.com/privacy) also applies.",
-          },
-        ],
-      },
-      {
-        id: 'google-data',
-        title: 'Google data',
-        blocks: [
-          {
-            quote:
-              "MyStuff's use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.",
-          },
-          { p: 'We use it only for your backup. We never share it, use it for ads, or use it to train AI.' },
-        ],
-      },
-      {
-        id: 'scan',
-        title: 'Scanning',
-        blocks: [
-          { p: "Scan uses Google's document scanner, part of Google Play services on your phone." },
-          {
-            list: [
-              'Your pages are scanned on your phone. They are not sent to Google or to heyhapps.',
-              'The first time, Google Play services may download the scanner.',
-              'Google gets basic diagnostics about the scanner, like your phone model and how long a scan took. Not your pages. [Google ML Kit data](https://developers.google.com/ml-kit/android-data-disclosure)',
-              "Don't want this? Use Choose file instead of Scan.",
-            ],
-          },
-        ],
-      },
-      {
-        id: 'online',
-        title: 'When MyStuff goes online',
-        blocks: [
-          {
-            p: "Only to sign in with Google, and to back up or restore. Scan can go online too, for Google's scanner. Links you tap open in your browser. Without Google, MyStuff works offline.",
-          },
-        ],
-      },
-      {
-        id: 'never',
-        title: 'We never',
-        blocks: [
-          {
-            list: [
-              'Run servers that get your data.',
-              'Show ads, or add analytics, tracking or crash reports of our own.',
-              'Sell or share your data.',
-              'Ask you to make an account.',
-            ],
-          },
-        ],
-      },
-      {
-        id: 'permissions',
-        title: 'Permissions',
-        blocks: [
-          {
-            list: [
-              'Internet: for Google Drive backup.',
-              'Biometrics: for fingerprint unlock, and to show your recovery answer, if you turn it on.',
-              "Network state: used by Google's scanner.",
-              'No camera permission: the scanner uses Google Play services for the camera.',
-            ],
-          },
-        ],
-      },
-      {
-        id: 'pin',
-        title: 'Forgot your PIN?',
-        blocks: [
-          {
-            p: "Tap \"Forgot PIN?\" and answer your recovery question. Then set a new PIN.",
-          },
-        ],
-      },
-      {
-        id: 'delete',
-        title: 'Deleting your data',
-        blocks: [
-          { p: 'Your data stays until you delete it.' },
-          {
-            list: [
-              'Settings → Sign out, and turn on "Also delete my Google Drive backup".',
-              'Uninstalling MyStuff deletes everything on your phone.',
-              'Remove Google access any time at https://myaccount.google.com/permissions',
-            ],
-          },
-        ],
-      },
-      {
-        id: 'website',
-        title: 'This website',
-        blocks: [
-          {
-            p: 'No cookies, no analytics. Your theme choice is saved in your browser only. The site is hosted on GitHub Pages, which may keep server logs.',
-          },
-        ],
-      },
-      { id: 'children', title: 'Children', blocks: [{ p: 'MyStuff is not for children under 13.' }] },
-      { id: 'changes', title: 'Changes', blocks: [{ p: "If this policy changes, we'll update this page and the date." }] },
-    ] as { id: string; title: string; blocks: ({ p: string } | { list: string[] } | { quote: string })[] }[],
   },
 }

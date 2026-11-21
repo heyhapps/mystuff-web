@@ -1,10 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { Privacy } from './pages/Privacy'
+import { Policy } from './pages/Policy'
+import { policies } from './policies'
 import './styles/theme.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Privacy />
+    <Policy policy={policies.privacy} />
   </StrictMode>,
 )

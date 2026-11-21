@@ -633,7 +633,7 @@ a { color: var(--accent); }
   .big3, .big3-more { grid-template-columns: minmax(0, 1fr); }
 }
 
-/* ---------- Privacy page ----------
+/* ---------- Policy pages ----------
    Wide screens: a contents list beside the text. Phones: a plain document. */
 .policy { max-width: 1060px; margin: 0 auto; padding: 56px 20px 0; }
 .policy-head { max-width: 680px; margin-bottom: 48px; }
@@ -768,7 +768,7 @@ a { color: var(--accent); }
   .getit .btn.ghost { display: none; }
   .getit-meta { order: 3; margin-top: 12px; font-size: var(--mobile-small); }
 
-  /* Footer: centred, co-brand on top, links in a 2 × 2 grid. */
+  /* Footer: centred, co-brand on top, links wrapping below. */
   .footer { margin-top: 56px; }
   .footer-inner { display: grid; justify-content: stretch; justify-items: center; gap: 18px; padding: 30px 20px 28px; text-align: center; }
   .footer-cobrand { height: auto; }
@@ -834,7 +834,7 @@ a { color: var(--accent); }
   .big3-small p { font-size: 12.5px; line-height: 1.45; }
   .getit-actions { display: grid; justify-content: stretch; margin: 18px 0 0; }
 
-  /* Privacy policy: a plain document */
+  /* Policy pages: a plain document */
   .policy { padding: 30px 20px 0; }
   .policy-head { margin-bottom: 26px; }
   .policy-head h1 { margin-bottom: 6px; font-size: 26px; line-height: 1.2; letter-spacing: -0.6px; }

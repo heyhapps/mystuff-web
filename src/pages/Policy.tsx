@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Layout } from '../components/Layout'
-import { site } from '../config'
+import type { PolicyDoc } from '../policies'
 
-const policy = site.privacy
-const sectionIds = policy.sections.map((s) => s.id)
+const base = import.meta.env.BASE_URL
 
-/** The privacy policy. On wide screens a contents list stays beside you,
+/** A policy page. On wide screens a contents list stays beside you,
  *  marking the section you are reading; on phones it is a plain document. */
-export function Privacy() {
+export function Policy({ policy }: { policy: PolicyDoc }) {
+  const sectionIds = useMemo(() => policy.sections.map((s) => s.id), [policy])
   const active = useActiveSection(sectionIds)
   return (
     <Layout>
@@ -15,7 +15,7 @@ export function Privacy() {
         <header className="policy-head">
           <h1>{policy.title}</h1>
           <p className="policy-intro">{policy.intro}</p>
-          <p className="policy-updated">Last updated {policy.updated}</p>
+          <p className="policy-updated">Last updated: {policy.updated}</p>
         </header>
 
         <div className="policy-body">
@@ -75,9 +75,17 @@ function useActiveSection(ids: string[]) {
   return active
 }
 
-/** Turns [label](https://...), emails and bare https:// links in policy text into links. */
+/** Turns [label](https://...), [label](page.html), emails and bare https:// links in policy text into links. */
 function linkify(text: string) {
-  return text.split(/(\[[^\]]+\]\(https:\/\/[^)]+\)|(?:\S+@\S+\.[a-z]+|https:\/\/[^\s]+?)(?=[.,]?(?:\s|$)))/).map((part, i) => {
+  return text.split(/(\[[^\]]+\]\((?:https:\/\/[^)]+|[\w-]+\.html)\)|(?:\S+@\S+\.[a-z]+|https:\/\/[^\s]+?)(?=[.,]?(?:\s|$)))/).map((part, i) => {
+    const page = part.match(/^\[([^\]]+)\]\(([\w-]+\.html)\)$/)
+    if (page) {
+      return (
+        <a key={i} href={base + page[2]}>
+          {page[1]}
+        </a>
+      )
+    }
     const labelled = part.match(/^\[([^\]]+)\]\((https:\/\/[^)]+)\)$/)
     if (labelled) {
       return (
