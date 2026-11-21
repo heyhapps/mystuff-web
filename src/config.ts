@@ -11,11 +11,11 @@ export const site = {
 
   links: {
     /** The arm64 APK, for most phones. Change the version on each release. */
-    download: 'https://github.com/heyhapps/mystuff-app/releases/download/v1.0.0/MyStuff-1.0.0-arm64.apk',
+    download: 'https://github.com/heyhapps/mystuff-web/releases/download/v1.0.0/MyStuff-1.0.0-arm64.apk',
     /** The newest release with every APK, for older phones. */
-    releases: 'https://github.com/heyhapps/mystuff-app/releases/latest',
+    releases: 'https://github.com/heyhapps/mystuff-web/releases/latest',
     itch: 'https://heyhapps.itch.io/mystuff',
-    github: 'https://github.com/heyhapps/mystuff-app',
+    github: 'https://github.com/heyhapps/mystuff-web/releases',
   },
 
   hero: {
