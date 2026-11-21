@@ -123,11 +123,10 @@ const privacy: PolicyDoc = {
         {
           list: [
             'MyStuff Pro is paid through Razorpay. Razorpay handles your card, UPI or bank details. We never see them.',
-            'Donations are paid by UPI from your UPI app, like GPay, PhonePe or Paytm.',
-            'As with any UPI payment, we see your name and UPI ID shown by UPI. We don\'t store them anywhere else.',
+            'Donations are paid through Razorpay too. Our server keeps no record of them.',
           ],
         },
-        { p: 'What we keep: the Google account ID linked to your Pro licence, so Pro comes back on a new phone. Nothing else.' },
+        { p: 'What we keep: your Google account ID and the Razorpay order ID of your Pro purchase, so Pro comes back on a new phone. Nothing else.' },
         { p: 'See the [Terms](terms.html) and the [Refund policy](refund.html).' },
       ],
     },
@@ -278,7 +277,7 @@ const terms: PolicyDoc = {
       blocks: [
         {
           list: [
-            'Donations are voluntary. They are paid by UPI from your UPI app.',
+            'Donations are voluntary. They are paid through Razorpay.',
             'Donating unlocks nothing.',
             'Donations are not refundable, except accidental duplicates.',
           ],
@@ -364,7 +363,7 @@ const refund: PolicyDoc = {
       title: 'Donations',
       blocks: [
         {
-          p: 'Donations are not refundable, except accidental duplicates. For a duplicate, email us with the UPI transaction ID.',
+          p: 'Donations are not refundable, except accidental duplicates. For a duplicate, email us with the payment ID.',
         },
       ],
     },

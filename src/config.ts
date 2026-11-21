@@ -10,8 +10,10 @@ export const site = {
   email: 'hello.heyhapps@gmail.com',
 
   links: {
-    /** The GitHub Releases page; "latest" always points at the newest APK. */
-    download: 'https://github.com/heyhapps/mystuff-app/releases/latest',
+    /** The arm64 APK, for most phones. Change the version on each release. */
+    download: 'https://github.com/heyhapps/mystuff-app/releases/download/v1.0.0/MyStuff-1.0.0-arm64.apk',
+    /** The newest release with every APK, for older phones. */
+    releases: 'https://github.com/heyhapps/mystuff-app/releases/latest',
     itch: 'https://heyhapps.itch.io/mystuff',
     github: 'https://github.com/heyhapps/mystuff-app',
   },
@@ -21,7 +23,7 @@ export const site = {
     /** The one word in the headline drawn in the brand gradient. */
     highlight: 'pocket',
     /** Small badge above the headline, with a green dot. Empty string hides it. */
-    badge: 'Beta is live',
+    badge: 'Now available',
     sub: 'A private vault for passwords, notes, cards, IDs and documents. Free, with no ads and no tracking.',
     primary: 'Download for Android',
     secondary: 'Get it on itch.io',
@@ -30,6 +32,8 @@ export const site = {
     secondaryShort: 'Get on itch.io',
     note: 'Free · optional Google Drive backup',
     notePhone: 'Free for Android 7 or newer',
+    /** Small link to every APK on the releases page. */
+    otherVersions: 'Other versions',
     /** App screens rebuilt in public/screens/<name>.html, left to right. */
     screens: [
       { screen: 'unlock', alt: 'MyStuff unlock screen with PIN pad and fingerprint' },
@@ -61,7 +65,7 @@ export const site = {
         title: 'Your Google Drive',
         file: 'mystuff_vault.msb',
         fileNote: 'Encrypted. Opens only with your PIN',
-        none: 'No heyhapps servers.',
+        none: 'Never sent to heyhapps.',
       },
     },
     safetyMore: [
@@ -102,7 +106,22 @@ export const site = {
         big: true,
         short: 'No',
         q: 'Can heyhapps see my data?',
-        a: 'heyhapps has no servers. Your data is only on your phone and in your own Google Drive.',
+        a: 'Your data is only on your phone and in your own Google Drive. Our small payment server only knows your Google account ID and your Pro purchase. It never gets your vault.',
+      },
+      {
+        icon: 'star',
+        q: 'What does Pro add?',
+        a: 'Free has 20 documents, 5 folders and files up to 5 MB. Pro has unlimited documents and folders, files up to 25 MB, and scan to PDF. Passwords, notes, cards and IDs are unlimited for everyone.',
+      },
+      {
+        icon: 'card',
+        q: 'How much is Pro?',
+        a: '₹299 once, a special offer (usually ₹399). No subscription. Pay by UPI, card or net banking through Razorpay. Pro is tied to your Google account and comes back on a new phone.',
+      },
+      {
+        icon: 'heart',
+        q: 'Can I support MyStuff?',
+        a: 'Yes. Go to Settings → Support MyStuff and donate any amount through Razorpay. Donating unlocks nothing.',
       },
       {
         icon: 'lock',
@@ -112,7 +131,7 @@ export const site = {
       {
         icon: 'user',
         q: 'Do I need a Google account?',
-        a: 'No. MyStuff works offline. Google only adds backup, and you can turn it on later.',
+        a: 'No. MyStuff works offline. Google is only needed for backup and Pro, and you can add it later.',
       },
       {
         icon: 'trash',

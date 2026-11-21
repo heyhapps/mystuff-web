@@ -73,7 +73,8 @@ function Hero() {
         <DownloadButtons short />
         <small className="hero-note">
           <span className="desktop-only">{site.hero.note}</span>
-          <span className="phone-only">{site.hero.notePhone}</span> · <a href={`${base}learn.html`}>Learn more</a>
+          <span className="phone-only">{site.hero.notePhone}</span> · <a href={`${base}learn.html`}>Learn more</a> ·{' '}
+          <a href={site.links.releases}>{site.hero.otherVersions}</a>
         </small>
         <div className="trio">
           <PhoneShot {...left} className="t-left" />
@@ -101,7 +102,9 @@ function GetIt() {
         </h2>
         <p className="getit-sub">{sub}</p>
         <DownloadButtons />
-        <small className="getit-meta">{meta}</small>
+        <small className="getit-meta">
+          {meta} · <a href={site.links.releases}>{site.hero.otherVersions}</a>
+        </small>
       </div>
 
       <div className="gs reveal" style={{ transitionDelay: '90ms' }}>

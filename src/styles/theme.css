@@ -210,7 +210,7 @@ a { color: var(--accent); }
   padding: 60px 20px 0;
   text-align: center;
 }
-/* "Public beta is open": a glass pill with a softly pulsing green dot. */
+/* "Now available": a glass pill with a softly pulsing green dot. */
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -361,6 +361,8 @@ a { color: var(--accent); }
 .getit-copy h2 span { display: block; }
 .getit-sub { margin: 0 0 28px; color: var(--muted); font-size: 16px; }
 .getit-meta { display: block; margin-top: 14px; color: var(--muted); font-size: 13px; }
+.getit-meta a { color: var(--accent); font-weight: 700; text-decoration: none; }
+.getit-meta a:hover { text-decoration: underline; }
 
 /* The right margin keeps the stacked card behind inside the content column. */
 .gs { position: relative; margin-right: 14px; }
