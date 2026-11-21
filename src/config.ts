@@ -14,7 +14,6 @@ export const site = {
     download: 'https://github.com/heyhapps/mystuff-web/releases/download/v1.0.0/MyStuff-1.0.0-arm64.apk',
     /** The newest release with every APK, for older phones. */
     releases: 'https://github.com/heyhapps/mystuff-web/releases/latest',
-    itch: 'https://heyhapps.itch.io/mystuff',
     github: 'https://github.com/heyhapps/mystuff-web/releases',
   },
 
@@ -26,10 +25,12 @@ export const site = {
     badge: 'Now available',
     sub: 'A private vault for passwords, notes, cards, IDs and documents. Free, with no ads and no tracking.',
     primary: 'Download for Android',
-    secondary: 'Get it on itch.io',
+    secondary: 'Get it on Google Play',
     /** Shorter labels for the side-by-side buttons on phones. */
     primaryShort: 'Download',
-    secondaryShort: 'Get on itch.io',
+    secondaryShort: 'Google Play',
+    /** Shown on the Google Play button when tapped, until it is out. */
+    secondarySoon: 'Coming soon',
     note: 'Free · optional Google Drive backup',
     notePhone: 'Free for Android 7 or newer',
     /** Small link to every APK on the releases page. */
@@ -150,7 +151,7 @@ export const site = {
     card: { title: 'Get started', sub: 'MyStuff by heyhapps' },
     /** `done` shows the step ticked. */
     steps: [
-      { title: 'Download MyStuff', line: 'From GitHub or itch.io', done: true },
+      { title: 'Download MyStuff', line: 'Free from this website', done: true },
       { title: 'Allow the install', line: 'Turn on "Allow from this source" once' },
       { title: 'Set your PIN', line: 'Open MyStuff and choose one' },
     ] as { title: string; line: string; done?: boolean }[],

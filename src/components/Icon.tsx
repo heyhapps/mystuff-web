@@ -21,6 +21,7 @@ const paths: Record<string, string> = {
     'M4 4h4 M4 4v4 M20 4h-4 M20 4v4 M4 20h4 M4 20v-4 M20 20h-4 M20 20v-4 M9.5 9.5l5 5 M14.5 9.5l-5 5',
   school: 'M12 4L2.5 9 12 14l7.5-3.95V15 M6 11.5V16c0 1.6 2.7 3 6 3s6-1.4 6-3v-4.5',
   download: 'M12 4v11 M7.5 11L12 15.5 16.5 11 M4.5 19.5h15',
+  play: 'M7 4.5v15L19.5 12z',
   check: 'M4.5 12.5L10 18 19.5 6.5',
   chevron: 'M8.5 5l7 7-7 7',
   x: 'M6 6l12 12 M18 6L6 18',

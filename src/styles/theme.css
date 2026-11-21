@@ -162,6 +162,8 @@ a { color: var(--accent); }
   font-size: 15px;
   text-decoration: none;
   border: 1px solid transparent;
+  font-family: inherit;
+  cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .btn.primary {

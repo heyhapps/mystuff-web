@@ -1,3 +1,4 @@
+import { useEffect, useState, type ReactNode } from 'react'
 import { Icon } from '../components/Icon'
 import { Layout } from '../components/Layout'
 import { PhoneShot } from '../components/PhoneShot'
@@ -11,6 +12,22 @@ export function Showcase() {
       <Hero />
       <GetIt />
     </Layout>
+  )
+}
+
+/** Google Play isn't out yet: a tap says so for a moment. */
+function PlayButton({ label }: { label: (full: string, brief: string) => ReactNode }) {
+  const [soon, setSoon] = useState(false)
+  useEffect(() => {
+    if (!soon) return
+    const timer = setTimeout(() => setSoon(false), 2000)
+    return () => clearTimeout(timer)
+  }, [soon])
+  return (
+    <button type="button" className="btn ghost" onClick={() => setSoon(true)} aria-live="polite">
+      <Icon name="play" size={18} />
+      {soon ? site.hero.secondarySoon : label(site.hero.secondary, site.hero.secondaryShort)}
+    </button>
   )
 }
 
@@ -31,9 +48,7 @@ function DownloadButtons({ short = false }: { short?: boolean }) {
         <Icon name="download" size={18} />
         {label(site.hero.primary, site.hero.primaryShort)}
       </a>
-      <a className="btn ghost" href={site.links.itch}>
-        {label(site.hero.secondary, site.hero.secondaryShort)}
-      </a>
+      <PlayButton label={label} />
     </div>
   )
 }
