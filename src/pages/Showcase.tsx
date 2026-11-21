@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react'
+import { useEffect, useState } from 'react'
 import { Icon } from '../components/Icon'
 import { Layout } from '../components/Layout'
 import { PhoneShot } from '../components/PhoneShot'
@@ -16,7 +16,7 @@ export function Showcase() {
 }
 
 /** Google Play isn't out yet: a tap says so for a moment. */
-function PlayButton({ label }: { label: (full: string, brief: string) => ReactNode }) {
+function PlayBadge() {
   const [soon, setSoon] = useState(false)
   useEffect(() => {
     if (!soon) return
@@ -24,9 +24,11 @@ function PlayButton({ label }: { label: (full: string, brief: string) => ReactNo
     return () => clearTimeout(timer)
   }, [soon])
   return (
-    <button type="button" className="btn ghost" onClick={() => setSoon(true)} aria-live="polite">
-      <Icon name="play" size={18} />
-      {soon ? site.hero.secondarySoon : label(site.hero.secondary, site.hero.secondaryShort)}
+    <button type="button" className="play-badge" onClick={() => setSoon(true)}>
+      <img src={`${base}brand/google-play-badge.png`} alt={site.hero.secondary} />
+      <span className={`play-soon${soon ? ' show' : ''}`} aria-live="polite">
+        {soon ? site.hero.secondarySoon : ''}
+      </span>
     </button>
   )
 }
@@ -48,7 +50,7 @@ function DownloadButtons({ short = false }: { short?: boolean }) {
         <Icon name="download" size={18} />
         {label(site.hero.primary, site.hero.primaryShort)}
       </a>
-      <PlayButton label={label} />
+      <PlayBadge />
     </div>
   )
 }

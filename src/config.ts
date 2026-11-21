@@ -28,7 +28,6 @@ export const site = {
     secondary: 'Get it on Google Play',
     /** Shorter labels for the side-by-side buttons on phones. */
     primaryShort: 'Download',
-    secondaryShort: 'Google Play',
     /** Shown on the Google Play button when tapped, until it is out. */
     secondarySoon: 'Coming soon',
     note: 'Free · optional Google Drive backup',
